@@ -1,0 +1,83 @@
+        :root {
+            --bg-light: #f4f7f6;
+            --primary-dark: #1a1a1a;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-light);
+            padding-bottom: 80px; /* Espacio para la barra inferior */
+        }
+        .header-app {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 20px 0;
+            border-radius: 0 0 25px 25px;
+            margin-bottom: 25px;
+        }
+        .card-custom {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+        /* Estilo para lista en móvil en lugar de tabla densa */
+        @media (max-width: 576px) {
+            .transaction-item {
+                background: white;
+                margin-bottom: 10px;
+                padding: 15px;
+                border-radius: 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .table-desktop { display: none; }
+        }
+        @media (min-width: 577px) {
+            .mobile-list { display: none; }
+        }
+        /* Barra de navegación inferior tipo App */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 12px 0;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+            z-index: 1050;
+        }
+        .nav-item-btn {
+            text-align: center;
+            color: #888;
+            text-decoration: none;
+            font-size: 0.8rem;
+        }
+        .nav-item-btn.active { color: #0d6efd; }
+        .nav-item-btn i { font-size: 1.4rem; display: block; }
+        
+        .fab-add {
+            width: 55px;
+            height: 55px;
+            background: #0d6efd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin-top: -35px;
+            border: 5px solid var(--bg-light);
+            box-shadow: 0 5px 15px rgba(13, 110, 253, 0.4);
+        }
+        /* Ajuste para que el modal no se pegue a la izquierda en PC */
+.modal-dialog {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 450px; /* Tamaño ideal para escritorio */
+    }
+}
+    
