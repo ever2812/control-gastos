@@ -16,7 +16,7 @@ try {
     $pdo = new PDO($dsn, $user, $pass, $options);
     
     // Consultamos los conceptos activos
-    $stmt = $pdo->query("SELECT idConcepto, nombre, tipo FROM conceptos WHERE estado = 1 ORDER BY tipo, nombre");
+    $stmt = $pdo->query("SELECT idConcepto, nombre, tipo FROM conceptos WHERE  estado = 1 ORDER BY tipo, nombre");
     $conceptos = $stmt->fetchAll();
 
     // Enviamos la respuesta como JSON
