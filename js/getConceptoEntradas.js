@@ -36,7 +36,7 @@ function filtrarConceptos(tipo) {
     // Crear y agregar las nuevas opciones
     filtrados.forEach(item => {
         const option = document.createElement('option');
-        option.value = item.id;
+        option.value = item.idConcepto;
         option.textContent = item.nombre;
         select.appendChild(option);
     });

@@ -36,6 +36,14 @@
     </div>
 
     <h6 class="fw-bold mb-3 px-1">Movimientos Recientes</h6>
+    <div class="row mb-4 justify-content-center">
+    <div class="col-md-4 col-10">
+        <div class="input-group shadow-sm">
+            <span class="input-group-text bg-white border-0"><i class="bi bi-calendar3"></i></span>
+            <input type="month" id="filtroMes" class="form-control border-0 py-2" value="2026-04">
+        </div>
+    </div>
+</div>
     
     <div class="mobile-list">
         <div class="transaction-item shadow-sm">
@@ -77,12 +85,14 @@
         <i class="bi bi-house-door-fill"></i>
         <span>Inicio</span>
     </a>
+
     <a href="#" class="nav-item-btn" data-bs-toggle="modal" data-bs-target="#modalRegistro">
         <div class="fab-add">
             <i class="bi bi-plus-lg"></i>
         </div>
         <span style="color:transparent">Add</span>
     </a>
+ 
     <a href="#" class="nav-item-btn">
         <i class="bi bi-graph-up"></i>
         <span>Reportes</span>
@@ -98,7 +108,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 
-                <form>
+                <form id="FormRegistro">
                     <div class="btn-group w-100 mb-4" role="group">
                         <input type="radio" class="btn-check" name="tipo_mov" id="btnIngreso" checked>
                         <label class="btn btn-outline-success border-2 fw-bold" for="btnIngreso">
@@ -115,7 +125,7 @@
                         <label class="small text-muted fw-bold">MONTO</label> 
                         <div class="input-group">
                             <span class="input-group-text bg-light border-0 fs-4">$</span>
-                            <input type="number" class="form-control form-control-lg bg-light border-0 fs-4 fw-bold" placeholder="0.00" step="0.01" required>
+                            <input type="number" name="monto" class="form-control form-control-lg bg-light border-0 fs-4 fw-bold" placeholder="0.00" step="0.01" required>
                         </div>
                     </div>
                     
@@ -128,10 +138,10 @@
                     </div>
                     <div class="mb-3">
                                 <label class="small text-muted fw-bold">Descripción</label>                        
-                        <input type="text" name="descripcion" class="form-control bg-light border-0 py-2" placeholder="Ej. Pago a proveedores, Venta servicio..." required>
+                        <input type="text" name="descripcion" id="descripcionMov" class="form-control bg-light border-0 py-2" placeholder="Ej. Pago a proveedores, Venta servicio..." required>
                     </div>
                     
-                    <button type="submit" class="btn btn-dark w-100 py-3 fw-bold shadow-sm" style="border-radius: 15px;">
+                    <button class="btn btn-dark w-100 py-3 fw-bold shadow-sm" style="border-radius: 15px;">
                         Guardar Registro
                     </button>
                 </form>
@@ -144,5 +154,6 @@
 
 <script src="js/getConceptoEntradas.js"></script>
 <script src="js/getMovimientos.js"></script>
+<script src="js/saveMovimientos.js"></script>
 </body>
 </html>
