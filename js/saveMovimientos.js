@@ -35,9 +35,10 @@ formulario.addEventListener('submit', function(e) {
 
             // 4. Actualizar la interfaz (lista y totales)
             cargarMovimientos(); 
-            // cargarResumenDashboard(); // Si decides crear la función de los cuadros de arriba
+            // Si decides crear la función de los cuadros de arriba, también la llamas aquí:
+             cargarResumenDashboard(); 
             
-            alert('¡Registro exitoso!');
+            // alert('¡Registro exitoso!');
         } else {
             alert('Error: ' + res.error);
         }
