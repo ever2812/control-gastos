@@ -3,7 +3,7 @@ function cargarResumenDashboard(mes) {
     fetch(`api/getResumen.php?mes=${mes}`)
         .then(response => response.json())
         .then(data => {
-            // Seleccionamos los elementos por sus IDs o clases (asegúrate de que existan en tu HTML)
+            // Seleccionamos los elementos por sus IDs o clases
             const elSaldo = document.querySelector('.header-app h1'); // El saldo grande del header
             const elIngresos = document.querySelector('.text-success.fw-bold'); // Tarjeta verde
             const elEgresos = document.querySelector('.text-danger.fw-bold'); // Tarjeta roja

@@ -34,9 +34,9 @@ formulario.addEventListener('submit', function(e) {
             modalBus.hide();
 
             // 4. Actualizar la interfaz (lista y totales)
-            cargarMovimientos(); 
+            cargarMovimientos(mesActual); 
             // Si decides crear la función de los cuadros de arriba, también la llamas aquí:
-             cargarResumenDashboard(); 
+             cargarResumenDashboard(mesActual); 
             
             // alert('¡Registro exitoso!');
         } else {
