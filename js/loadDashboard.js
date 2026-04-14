@@ -1,6 +1,6 @@
 // Función para actualizar los números del Dashboard
-function cargarResumenDashboard() {
-    fetch('api/getResumen.php')
+function cargarResumenDashboard(mes) {
+    fetch(`api/getResumen.php?mes=${mes}`)
         .then(response => response.json())
         .then(data => {
             // Seleccionamos los elementos por sus IDs o clases (asegúrate de que existan en tu HTML)
@@ -23,6 +23,6 @@ function cargarResumenDashboard() {
 
 // Llamar a esta función al cargar la página y después de cada nuevo registro
 document.addEventListener('DOMContentLoaded', () => {
-    cargarResumenDashboard();
-    cargarMovimientos();
+    cargarResumenDashboard(mesActual);
+    cargarMovimientos(mesActual);
 });

@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Además de cargar conceptos, cargamos los movimientos
-    cargarMovimientos();
+    cargarMovimientos(mesActual);
 });
 
-function cargarMovimientos() {
+function cargarMovimientos(mes) {
     const tablaCuerpo = document.getElementById('tablaMovimientos');
     const listaMovil = document.querySelector('.mobile-list');
 
-    fetch('api/getMovimientos.php')
+    fetch(`api/getMovimientos.php?mes=${mes}`)
         .then(response => response.json())
         .then(data => {
             tablaCuerpo.innerHTML = '';

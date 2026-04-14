@@ -16,6 +16,8 @@ try {
     $pdo = new PDO($dsn, $user, $pass, $options);
     
     // Consulta con JOIN para traer el nombre del concepto
+    $mesSeleccionado = $_GET['mes'] ?? date('Y-m'); // Por defecto mes actual
+    
     $sql = "SELECT 
                 m.idMovimiento, 
                 m.monto, 
@@ -25,10 +27,12 @@ try {
                 c.nombre AS concepto_nombre
             FROM movimientos m
             JOIN conceptos c ON m.idConcepto = c.idConcepto
+            WHERE DATE_FORMAT(fecha_operacion, '%Y-%m') = :mes
             ORDER BY m.fecha_operacion DESC, m.creado_en DESC 
             LIMIT 20";
 
-    $stmt = $pdo->query($sql);
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([':mes' => $mesSeleccionado]);
     $movimientos = $stmt->fetchAll();
 
     header('Content-Type: application/json');
