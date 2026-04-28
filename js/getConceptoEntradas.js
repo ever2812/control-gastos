@@ -3,7 +3,7 @@ let listaConceptos = [];
 
 document.addEventListener('DOMContentLoaded', function() {
     // 1. Cargar los datos desde el servidor al iniciar
-    fetch('api/getConceptos.php')
+    fetch('../api/getConceptos.php')
         .then(response => response.json())
         .then(data => {
             listaConceptos = data;

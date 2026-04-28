@@ -1,6 +1,6 @@
 // Función para actualizar los números del Dashboard
 function cargarResumenDashboard(mes) {
-    fetch(`api/getResumen.php?mes=${mes}`)
+    fetch(`../api/getResumen.php?mes=${mes}`)
         .then(response => response.json())
         .then(data => {
             // Seleccionamos los elementos por sus IDs o clases

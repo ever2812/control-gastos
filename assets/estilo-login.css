@@ -1,0 +1,98 @@
+:root {
+            --navy-deep: #0a2647;
+            --navy-bright: #144272;
+            --soft-bg: #f0f4f8;
+            --white: #ffffff;
+        }
+
+        body {
+            background-color: var(--soft-bg);
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+        }
+
+        .auth-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(10, 38, 71, 0.1);
+            border: none;
+        }
+
+        .brand-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--navy-deep);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+        }
+
+        .form-label {
+            color: var(--navy-deep);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-left: 5px;
+        }
+
+        .form-control {
+            border: 2px solid #e1e8ef;
+            border-radius: 15px;
+            padding: 12px 18px;
+            background-color: #fafbfc;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--navy-bright);
+            box-shadow: none;
+            background-color: var(--white);
+        }
+
+        /* BOTÓN PRINCIPAL: Texto Blanco Garantizado */
+        .btn-navy {
+            background-color: var(--navy-deep);
+            color: var(--white) !important;
+            border: none;
+            border-radius: 15px;
+            padding: 14px;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-navy:hover {
+            background-color: var(--navy-bright);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(10, 38, 71, 0.2);
+        }
+
+        .auth-switch {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 0.9rem;
+        }
+
+        .auth-switch a {
+            color: var(--navy-bright);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* Clases para alternar formularios */
+        .d-none { display: none !important; }

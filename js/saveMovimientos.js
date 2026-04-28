@@ -17,7 +17,7 @@ formulario.addEventListener('submit', function(e) {
     };
 
     // 2. Enviar vía Fetch POST
-    fetch('api/saveMovimiento.php', {
+    fetch('../api/saveMovimiento.php', {
         method: 'POST',
         headers:  {
             'Content-Type': 'application/json'
@@ -33,12 +33,11 @@ formulario.addEventListener('submit', function(e) {
             const modalBus = bootstrap.Modal.getInstance(modalEl);
             modalBus.hide();
 
-            // 4. Actualizar la interfaz (lista y totales)
-            cargarMovimientos(mesActual); 
-            // Si decides crear la función de los cuadros de arriba, también la llamas aquí:
-             cargarResumenDashboard(mesActual); 
-            
-            // alert('¡Registro exitoso!');
+            //refrescar movimientos y dashboard
+            refrescarTodo();
+            const toast = new bootstrap.Toast(document.getElementById('liveToast'));
+            toast.show();
+
         } else {
             alert('Error: ' + res.error);
         }

@@ -7,7 +7,7 @@ function cargarMovimientos(mes) {
     const tablaCuerpo = document.getElementById('tablaMovimientos');
     const listaMovil = document.querySelector('.mobile-list');
 
-    fetch(`api/getMovimientos.php?mes=${mes}`)
+    fetch(`../api/getMovimientos.php?mes=${mes}`)
         .then(response => response.json())
         .then(data => {
             tablaCuerpo.innerHTML = '';
