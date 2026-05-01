@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Control de Gastos</title>
+    <title>Balanz | Control financiero</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/estilo.css">
@@ -95,8 +95,8 @@
         <span style="color:transparent">Add</span>
     </a>
  
-    <a href="#" class="nav-item-btn" id="btnSalir">
-        <i class="bi bi-box-arrow-right"></i>
+    <a href="#" class="nav-item-btn" id="btnSalir" >
+        <i class="bi bi-box-arrow-right" ></i>
         <span>Salir</span>
     </a>
 </div>
@@ -154,10 +154,12 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
     <script>
         // Verificar si el usuario está autenticado
         const idUser = localStorage.getItem('idUser');
-        alert(idUser);
+        console.log('ID Usuario:', idUser); // Agrega este log para verificar el valor de idUser
 
         if (!idUser) {
             window.location.href = '../'; // Redirigir al login si no está autenticado
@@ -173,6 +175,8 @@
 <script src="../js/saveMovimientos.js"></script>
 <script src="../js/loadDashboard.js"></script>
 <script src="../js/getFiltroMes.js"></script>
+<script src="../admin/validateSesion.js"></script>
+<script src="../admin/logOut.js"></script>
 
 
 

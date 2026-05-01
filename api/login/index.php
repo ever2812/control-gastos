@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 header('Content-Type: application/json');
 
 //conexion a la base de datos
@@ -29,8 +29,8 @@ $user = $stmt->fetch();
 
 if ($user && password_verify($data['psdUsuario'], $user['password_hash'])) {
     //se incia la sesión y se guardan los datos del usuario en la sesión
-    //session_start();
-    
+
+    session_start();
     $_SESSION['user_id'] = $user['idUsuario'];
     $_SESSION['user_nombre'] = $user['nombre'];
 

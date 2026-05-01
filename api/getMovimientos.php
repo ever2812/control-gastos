@@ -1,4 +1,12 @@
 <?php
+
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    die(json_encode(['error' => 'Acceso denegado']));
+}
+
+$idUsuario = $_SESSION['user_id'];
+
 // Configuración de conexión (ajusta con tus credenciales)
 $host = 'localhost';
 $db   = 'control_gastos';
@@ -29,11 +37,12 @@ try {
             FROM movimientos m
             JOIN conceptos c ON m.idConcepto = c.idConcepto
             WHERE DATE_FORMAT(fecha_operacion, '%Y-%m') = :mes
+            AND m.idUsuario = :idUsuario            
             ORDER BY m.fecha_operacion DESC, m.creado_en DESC 
             LIMIT 20";
 
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([':mes' => $mesSeleccionado]);
+    $stmt->execute([':mes' => $mesSeleccionado, ':idUsuario' => $idUsuario]);
     $movimientos = $stmt->fetchAll();
 
     header('Content-Type: application/json');

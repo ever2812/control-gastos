@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CashFlow | Acceso</title>
+    <title>Balanz | Control financiero</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="assets/estilo-login.css">
@@ -37,21 +37,22 @@
 
         <div id="registerView" class="d-none">
             <h4 class="text-center fw-bold mb-4" style="color: var(--navy-deep);">Crea tu cuenta</h4>
-            <form id="registerForm">
+            <form id="FormRegistro">
                 <div class="mb-3">
-                    <label class="form-label">Nombre del Negocio</label>
-                    <input type="text" class="form-control" placeholder="Mi Empresa" required>
+                    <label class="form-label">Nombre Completo</label>
+                    <input type="text" class="form-control" placeholder="Juan Pérez" required name="nombreUsuario">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Correo Electrónico</label>
-                    <input type="email" class="form-control" placeholder="correo@empresa.com" required>
+                    <input type="email" class="form-control" placeholder="juan@ejemplo.com" required name="emailUsuario">
                 </div>
                 <div class="mb-4">
                     <label class="form-label">Contraseña</label>
-                    <input type="password" class="form-control" placeholder="Crea una contraseña" required>
+                    <input type="password" class="form-control" placeholder="Crea una contraseña" required name="psdUsuario">
                 </div>
                 <button type="submit" class="btn btn-navy">Registrarme</button>
             </form>
+
             <div class="auth-switch">
                 <span class="text-muted">¿Ya tienes cuenta?</span> 
                 <a href="javascript:void(0)" onclick="toggleAuth()">Inicia Sesión</a>
@@ -72,6 +73,23 @@
 </script>
 
 <script src="js/login.js"></script>
+<script src="js/registerUsr.js"></script>
+
+
+<!-- Toast para notificaciones -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded me-2" alt="...">
+      <strong class="me-auto">Atención</strong>
+      <small>...</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      aqui va el mensaje del toast
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

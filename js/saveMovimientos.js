@@ -13,7 +13,7 @@ formulario.addEventListener('submit', function(e) {
         concepto_id: document.getElementById('idConcepto').value,
         monto: document.querySelector('input[type="number"]').value,
         descripcion: document.getElementById('descripcionMov').value,
-        idUsuario: 1, // Por ahora, lo dejamos fijo. Luego se puede adaptar para manejar múltiples usuarios.        
+        idUsuario: document.getElementById('idUser').value, 
     };
 
     // 2. Enviar vía Fetch POST
