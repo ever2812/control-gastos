@@ -1,13 +1,13 @@
 <?php
 header('Content-Type: application/json');
 
-
+include '<config>config.php';
 //conexion a la base de datos
-$host = 'localhost';
-$db   = 'control_gastos';
-$user = 'root';
-$pass = '';
-$charset = 'utf8mb4';
+// $host = 'localhost';
+// $db   = 'control_gastos';
+// $user = 'root';
+// $pass = '';
+// $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
