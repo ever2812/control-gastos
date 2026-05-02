@@ -1,5 +1,8 @@
 <?php
 
+include 'config/config.php';
+
+// Verificar sesión y obtener ID de usuario
 session_start();
 if (!isset($_SESSION['user_id'])) {
     die(json_encode(['error' => 'Acceso denegado']));
@@ -7,12 +10,6 @@ if (!isset($_SESSION['user_id'])) {
 
 $idUsuario = $_SESSION['user_id'];
 
-// Configuración de conexión (ajusta con tus credenciales)
-$host = 'localhost';
-$db   = 'control_gastos';
-$user = 'root';
-$pass = '';
-$charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 

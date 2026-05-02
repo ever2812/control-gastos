@@ -1,21 +1,13 @@
 <?php
-// Configuración de conexión (ajusta con tus datos)
-$host = 'localhost';
-$db   = 'control_gastos';
-$user = 'root';
-$pass = '';
-$charset = 'utf8mb4';
 
-$dsn = "mysql:host=$host;dbname=$db;charset=$charset";
+//incluir archivo de configuración a base de datos
 
-$options = [    
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
 
 try {
-    $pdo = new PDO($dsn, $user, $pass, $options);
     
+    include 'config/config.php';
+    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=$charset", $user, $pass);
+
     // Consultamos los conceptos activos
     $stmt = $pdo->query("SELECT idConcepto, nombre, tipo FROM conceptos WHERE  estado = 1 ORDER BY tipo, nombre");
     $conceptos = $stmt->fetchAll();

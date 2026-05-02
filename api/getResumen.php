@@ -1,23 +1,24 @@
 <?php
 
+
+include 'config/config.php';
+//manejo de la sesión y verificación de usuario
 session_start();
+
 if (!isset($_SESSION['user_id'])) {
     die(json_encode(['error' => 'Acceso denegado']));
 }
 
+//se obtiene el id
 $idUsuario = $_SESSION['user_id'];
 
 
 header('Content-Type: application/json');
 
-$host = 'localhost';
-$db   = 'control_gastos';
-$user = 'root';
-$pass = '';
-$charset = 'utf8mb4';
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $pass);
+
+    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=$charset", $user, $pass);
 
     // Consulta para obtener totales por tipo
     $mesSeleccionado = $_GET['mes'] ?? date('Y-m'); // Por defecto mes actual
@@ -50,14 +51,9 @@ try {
 
 function getSaldo($idUsuario)
 {
+    include 'config/config.php';
 
-    $host = 'localhost';
-    $db   = 'control_gastos';
-    $user = 'root';
-    $pass = '';
-    $charset = 'utf8mb4';
-
-    $pdo2 = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $pass);
+    $pdo2 = new PDO("mysql:host=$host;dbname=$db;charset=$charset", $user, $pass);
     $sql = "SELECT 
             SUM(CASE WHEN tipo = 'entrada' THEN monto ELSE 0 END) as total_ingresos,
             SUM(CASE WHEN tipo = 'salida' THEN monto ELSE 0 END) as total_egresos
