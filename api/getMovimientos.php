@@ -1,6 +1,6 @@
 <?php
 
-include 'config/config.php';
+
 
 // Verificar sesión y obtener ID de usuario
 session_start();
@@ -10,16 +10,13 @@ if (!isset($_SESSION['user_id'])) {
 
 $idUsuario = $_SESSION['user_id'];
 
+include_once "config/config.php";
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
-$options = [
-    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    PDO::ATTR_EMULATE_PREPARES   => false,
-];
 
 try {
-    $pdo = new PDO($dsn, $user, $pass, $options);
+    $pdo = new PDO($dsn, $user, $pass);
     
     // Consulta con JOIN para traer el nombre del concepto
     $mesSeleccionado = $_GET['mes'] ?? date('Y-m'); // Por defecto mes actual
