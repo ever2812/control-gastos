@@ -1,13 +1,13 @@
 <?php
 header('Content-Type: application/json');
 
-// Configuración de conexión
-$host = 'localhost';
-$db   = 'control_gastos';
-$user = 'root';
-$pass = '';
+
+
+// Configuración de conexión// 
 
 try {
+    
+    include 'config/config.php';
     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $pass);
     
     // Recibir datos del POST (JSON)
