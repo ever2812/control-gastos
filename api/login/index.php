@@ -2,7 +2,7 @@
 
 header('Content-Type: application/json');
 
-include 'config/config.php';
+include_once "../config/config.php";
 //conexion a la base de datos
 
 
